@@ -1,0 +1,361 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1. 简介 &mdash; 微服务架构概述 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="微服务架构概述 1.0.0 documentation" href="../../index.html"/>
+        <link rel="up" title="Spring Cloud Config" href="config.html"/>
+        <link rel="next" title="Spring Cloud Bus" href="../06.bus/bus.html"/>
+        <link rel="prev" title="Spring Cloud Config" href="config.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> 微服务架构概述
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../00.summary/summary.html">微服务</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../spring-cloud.html">Spring Cloud</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../01.introduction/introduction.html">Spring Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02.eureka/eureka.html">Spring Cloud Eureka</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03.feign/feign.html">Spring Cloud feign</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04.zuul/zuul.html">Spring Cloud Zuul</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="config.html">Spring Cloud Config</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">1. 简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">2. 快速入门</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">3. 客户端配置</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../06.bus/bus.html">Spring Cloud Bus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07.stream/stream.html">Spring Cloud Stream</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">微服务架构概述</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../spring-cloud.html">Spring Cloud</a> &raquo;</li>
+        
+          <li><a href="config.html">Spring Cloud Config</a> &raquo;</li>
+        
+      <li>1. 简介</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/01.spring-cloud/05.config/config_01.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>1. 简介<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Spring Cloud Config用来为分布式系统中基础设施和微服务应用提供集中化的外部配置支持，分为服务端和客户端两部分。服务端作为独立的微服务，用来链接配置仓库并为客户端提供获取配置信息、加密/解密信息等访问接口；客户端内嵌在微服务中，当微服务启动时将从配置的配置中心获取和加载配置信息。</p>
+</div>
+<div class="section" id="id2">
+<h1>2. 快速入门<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h1>
+<p>1.创建一个Spring Boot工程，命名为config-server，并在pom.xml中添加如下依赖:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">dependency</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">groupId</span><span class="o">&gt;</span><span class="n">org</span><span class="o">.</span><span class="n">springframework</span><span class="o">.</span><span class="n">cloud</span><span class="o">&lt;/</span><span class="n">groupId</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">artifactId</span><span class="o">&gt;</span><span class="n">spring</span><span class="o">-</span><span class="n">cloud</span><span class="o">-</span><span class="n">config</span><span class="o">-</span><span class="n">service</span><span class="o">&lt;/</span><span class="n">artifactId</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">dependency</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">dependency</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">groupId</span><span class="o">&gt;</span><span class="n">org</span><span class="o">.</span><span class="n">springframework</span><span class="o">.</span><span class="n">cloud</span><span class="o">&lt;/</span><span class="n">groupId</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">artifactId</span><span class="o">&gt;</span><span class="n">spring</span><span class="o">-</span><span class="n">cloud</span><span class="o">-</span><span class="n">starter</span><span class="o">-</span><span class="n">eureka</span><span class="o">&lt;/</span><span class="n">artifactId</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">dependency</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>2.创建主类,添加&#64;EnableConfigServer开启Spring Cloud Config的服务端功能:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@EnableConfigServer</span>
+<span class="nd">@EnableDiscoveryClent</span>
+<span class="nd">@SpringBootApplication</span>
+<span class="n">public</span> <span class="k">class</span> <span class="nc">ConfigServerApplication</span> <span class="p">{</span>
+
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">SpringApplication</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">ConfigServerApplication</span><span class="o">.</span><span class="n">class</span><span class="p">,</span> <span class="n">args</span><span class="p">);</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>3.配置文件中添加Git仓库的相关信息:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>spring.cloud.config.server.git.uri: 配置Git仓库位置
+spring.cloud.config.server.git.searchPaths: 配置路径下的相对搜索位置，可以配置多个
+spring.cloud.config.server.git.usernane: 配置访问Git仓库的用户信息
+spring.cloud.config.server.git.password: 配置访问Git仓库的用户名秘密
+spring.cloud.config.server.git.basedir: 设置配置中心缓存拉取配置文件的目录
+</pre></div>
+</div>
+<p>4.创建配置仓库</p>
+<p>根据config-server中配置的Git仓库位置创建仓库，并根据不同环境新建对应的配置文件:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">configspace</span><span class="o">.</span><span class="n">properties</span>
+<span class="n">configspace</span><span class="o">-</span><span class="n">dev</span><span class="o">.</span><span class="n">properties</span>
+<span class="n">configspace</span><span class="o">-</span><span class="n">test</span><span class="o">.</span><span class="n">properties</span>
+<span class="n">configsapce</span><span class="o">-</span><span class="n">prod</span><span class="o">.</span><span class="n">properties</span>
+</pre></div>
+</div>
+<p>访问配置信息的URL与配置文件的映射关系，application对应应用名，profile对应环境名，label对应Git上不同分支:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="p">{</span><span class="n">application</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">profile</span><span class="p">}[</span><span class="o">/</span><span class="p">{</span><span class="n">label</span><span class="p">}]</span>
+<span class="o">/</span><span class="p">{</span><span class="n">application</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">profile</span><span class="p">}</span><span class="o">.</span><span class="n">yml</span>
+<span class="o">/</span><span class="p">{</span><span class="n">label</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">application</span><span class="p">}</span><span class="o">-</span><span class="p">{</span><span class="n">profile</span><span class="p">}</span><span class="o">.</span><span class="n">yml</span>
+<span class="o">/</span><span class="p">{</span><span class="n">application</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">profile</span><span class="p">}</span><span class="o">.</span><span class="n">properties</span>
+<span class="o">/</span><span class="p">{</span><span class="n">label</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">application</span><span class="p">}</span><span class="o">-</span><span class="p">{</span><span class="n">profile</span><span class="p">}</span><span class="o">.</span><span class="n">properties</span>
+</pre></div>
+</div>
+<p>微服务应用从配置中心获取配置文件时，配置中心将通过git clone加载配置文件到配置中心本地，并将这些配置文件返回给微服务应用。即使配置中心不能访问Git配置文件地址时也能返回配置文件</p>
+</div>
+<div class="section" id="id3">
+<h1>3. 客户端配置<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h1>
+<p>1.创建一个Spring Boot应用，命名为config-client，并在pom.xml中添加如下依赖:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-cloud-starter-config&lt;/artifactId&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-cloud-starter-eureka&lt;/artifactId&gt;
+&lt;/dependency&gt;
+
+&lt;!-- 配置访问配置中心失败时重试依赖 --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.retry&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-retry&lt;/artifactId&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-starter-aop&lt;/artifactId&gt;
+&lt;/dependency&gt;
+</pre></div>
+</div>
+<p>2.创建Spring Boot主类:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@EnableDiscoveryClent</span>
+<span class="nd">@SpringBootApplication</span>
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Application</span> <span class="p">{</span>
+
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">SpringApplication</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">Application</span><span class="o">.</span><span class="n">class</span><span class="p">,</span> <span class="n">args</span><span class="p">);</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>3.配置文件bootstrap.properties中添加如下配置项:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>spring.application.name: 配置获取配置文件的服务名
+spring.cloud.config.profile: 配置获取配置文件的环境名
+spring.cloud.config.label: 配置获取配置文件的版本
+spring.cloud.config.url: 配置中心的地址
+
+spring.cloud.config.discovery.enable: 设置是否开启服务名访问配置中心功能
+spring.cloud.config.discovery.serviceId: 设置要访问配置中心服务名
+
+spring.cloud.config.failFast: 设置客户端启动时是否优先尝试判断从配置中心获取配置信息是否正常
+spring.cloud.config.retry.multiplier: 设置初始重试间隔时间
+spring.cloud.config.retry.initial-interval: 设置下一间隔的乘数
+spring.cloud.config.retry.max-interval: 设置最大间隔时间，默认为2000毫秒
+spring.cloud.config.retry.max-attempts: 设置最大重试次数，默认为6次
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../06.bus/bus.html" class="btn btn-neutral float-right" title="Spring Cloud Bus" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="config.html" class="btn btn-neutral" title="Spring Cloud Config" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright .
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.0.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/language_data.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

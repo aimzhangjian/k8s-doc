@@ -1,0 +1,260 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1. 1.概述 &mdash; 微服务架构概述 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="微服务架构概述 1.0.0 documentation" href="../index.html"/>
+        <link rel="up" title="微服务" href="summary.html"/>
+        <link rel="next" title="Spring Cloud" href="../01.spring-cloud/spring-cloud.html"/>
+        <link rel="prev" title="微服务" href="summary.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 微服务架构概述
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="summary.html">微服务</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">1. 1.概述</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../01.spring-cloud/spring-cloud.html">Spring Cloud</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">微服务架构概述</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="summary.html">微服务</a> &raquo;</li>
+        
+      <li>1. 1.概述</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/00.summary/summary_01.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>1. 1.概述<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>微服务是系统架构的一种设计风格，主旨是将一个原本独立的系统拆分成多个小型系统，这些系统在各自独立的进程中运行，服务间通过HTTP的RESTful API进行通信协作。被拆分成的每个小型服务都围绕系统中某一项或一些耦合性较高的业务功能进行构建，每个服务都维护着自身的数据存储、业务开发、自动化测试案例以及独立部署机制。</p>
+<p>与单体系统的区别：</p>
+<blockquote>
+<div><ul class="simple">
+<li>微服务系统易于扩展，对于新的业务可方便接入到现有系统中；</li>
+<li>解决单体系统的臃肿庞大难以维护，将系统按业务功能模块拆分成多个微服务，每个微服务专注于解决对应业务领域问题，更易于维护；</li>
+<li>每个服务运行在自己的进程内，在部署上有稳固的部署边界，每个服务的部署更新不影响其它服务的运行；</li>
+<li>系统按功能模块拆分成多个微服务，数据库也将根据业务进行拆分，使得单个微服务数据库表、数据量得到控制；</li>
+</ul>
+</div></blockquote>
+<p>引入的问题:</p>
+<ul class="simple">
+<li>跨服务调用，增加时间开销</li>
+<li>分布式事务一致性问题引入，给系统带来灾难性影响</li>
+<li>幂等性问题引入</li>
+<li>分库分表带来性能上的影响</li>
+</ul>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../01.spring-cloud/spring-cloud.html" class="btn btn-neutral float-right" title="Spring Cloud" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="summary.html" class="btn btn-neutral" title="微服务" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright .
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.0.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

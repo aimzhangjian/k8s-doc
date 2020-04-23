@@ -1,0 +1,269 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1. 简介 &mdash; 微服务架构概述 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="微服务架构概述 1.0.0 documentation" href="../../index.html"/>
+        <link rel="up" title="Spring Cloud" href="introduction.html"/>
+        <link rel="next" title="Spring Cloud Eureka" href="../02.eureka/eureka.html"/>
+        <link rel="prev" title="Spring Cloud" href="introduction.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> 微服务架构概述
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../00.summary/summary.html">微服务</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../spring-cloud.html">Spring Cloud</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="introduction.html">Spring Cloud</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">1. 简介</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../02.eureka/eureka.html">Spring Cloud Eureka</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03.feign/feign.html">Spring Cloud feign</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04.zuul/zuul.html">Spring Cloud Zuul</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05.config/config.html">Spring Cloud Config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06.bus/bus.html">Spring Cloud Bus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07.stream/stream.html">Spring Cloud Stream</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">微服务架构概述</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../spring-cloud.html">Spring Cloud</a> &raquo;</li>
+        
+          <li><a href="introduction.html">Spring Cloud</a> &raquo;</li>
+        
+      <li>1. 简介</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/01.spring-cloud/01.introduction/introduction_01.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>1. 简介<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Spring Cloud是一个基于Spring Boot实现的微服务架构开发工具。给出了在实际应用中出现各种问题的解决方案和开源框架。</p>
+<img alt="../../_images/spring_cloud.png" src="../../_images/spring_cloud.png" />
+<p>基础组件:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Spring Cloud Eureka: 服务治理组件,包含服务注册中心、服务注册与发现机制的实现。</li>
+<li>Spring Cloud Hystrix: 容错管理组件，实现断路器模式，帮助服务依赖中出现的延迟和为故障提供强大的容错能力。</li>
+<li>Spring Cloud Ribbon: 客户端负载均衡的服务调用组件。</li>
+<li>Spring Cloud Feign: 基于Ribbon和Hystrix的声明式服务调用组件。</li>
+<li>Spring Cloud Zuul: 网关组件，提供智能路由、访问过滤等功能。</li>
+<li>Spring Cloud Stream: 消息驱动事件模型。</li>
+<li>Spring Cloud Security: 安全工具包，提供Zull代理中对OAuth2请求对中继器。</li>
+<li>Spring Cloud Config: 配置管理工具，可以实现应用配置的外部化存储，并支持配置信息刷新、加密/解密。</li>
+</ul>
+</div></blockquote>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../02.eureka/eureka.html" class="btn btn-neutral float-right" title="Spring Cloud Eureka" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="introduction.html" class="btn btn-neutral" title="Spring Cloud" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright .
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.0.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/language_data.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

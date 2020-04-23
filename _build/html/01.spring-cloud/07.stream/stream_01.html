@@ -1,0 +1,384 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1. 简介 &mdash; 微服务架构概述 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="微服务架构概述 1.0.0 documentation" href="../../index.html"/>
+        <link rel="up" title="Spring Cloud Stream" href="stream.html"/>
+        <link rel="prev" title="Spring Cloud Stream" href="stream.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> 微服务架构概述
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../00.summary/summary.html">微服务</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../spring-cloud.html">Spring Cloud</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../01.introduction/introduction.html">Spring Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02.eureka/eureka.html">Spring Cloud Eureka</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03.feign/feign.html">Spring Cloud feign</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04.zuul/zuul.html">Spring Cloud Zuul</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05.config/config.html">Spring Cloud Config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06.bus/bus.html">Spring Cloud Bus</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="stream.html">Spring Cloud Stream</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">1. 简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">2. 快速入门</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">3. 核心概念</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id4">3.1. 绑定器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">3.2. 发布订阅模式</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">3.3. 消息分组</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">3.4. 消息分区</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">微服务架构概述</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../spring-cloud.html">Spring Cloud</a> &raquo;</li>
+        
+          <li><a href="stream.html">Spring Cloud Stream</a> &raquo;</li>
+        
+      <li>1. 简介</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/01.spring-cloud/07.stream/stream_01.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>1. 简介<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Spring Cloud Stream 是一个为微服务构建消息驱动能力的框架。整合了Spring Boot和Spring Integration，实现了一套轻量级的消息驱动的微服务架构。有效的简化了开发人员对消息中间件的使用复杂度，让开发人员有更多的精力去关注于核心业务代码。</p>
+</div>
+<div class="section" id="id2">
+<h1>2. 快速入门<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h1>
+<p>1.创建Spring Boot 项目，命名stream-demo，pom.xml中添加如下依赖:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">dependency</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">groupId</span><span class="o">&gt;</span><span class="n">org</span><span class="o">.</span><span class="n">springframework</span><span class="o">.</span><span class="n">cloud</span><span class="o">&lt;/</span><span class="n">groupId</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">artifactId</span><span class="o">&gt;</span><span class="n">spring</span><span class="o">-</span><span class="n">cloud</span><span class="o">-</span><span class="n">stream</span><span class="o">-</span><span class="n">binder</span><span class="o">-</span><span class="n">kafka</span><span class="o">&lt;/</span><span class="n">artifactId</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">dependency</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>2.创建自定义通道接口，SendAndReceive:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="n">interface</span> <span class="n">SendAndReceive</span><span class="p">{</span>
+
+    <span class="n">String</span> <span class="n">SEND1</span> <span class="o">=</span> <span class="s2">&quot;send1&quot;</span><span class="p">;</span>
+
+    <span class="n">String</span> <span class="n">SEND2</span> <span class="o">=</span> <span class="s2">&quot;send2&quot;</span><span class="p">;</span>
+
+    <span class="n">String</span> <span class="n">SEND3</span> <span class="o">=</span> <span class="s2">&quot;send3&quot;</span><span class="p">;</span>
+
+    <span class="n">String</span> <span class="n">INPUT1</span> <span class="o">=</span> <span class="s2">&quot;INPUT1&quot;</span><span class="p">;</span>
+
+    <span class="n">String</span> <span class="n">INPUT2</span> <span class="o">=</span> <span class="s2">&quot;INPUT2&quot;</span><span class="p">;</span>
+
+    <span class="n">String</span> <span class="n">INPUT3</span> <span class="o">=</span> <span class="s2">&quot;INPUT3&quot;</span><span class="p">;</span>
+
+    <span class="nd">@Input</span><span class="p">(</span><span class="n">SendAndReceive</span><span class="o">.</span><span class="n">INPUT1</span><span class="p">)</span>
+    <span class="n">SubscribableChannel</span> <span class="n">input1</span><span class="p">();</span>
+
+    <span class="nd">@Input</span><span class="p">(</span><span class="n">SendAndReceive</span><span class="o">.</span><span class="n">INPUT2</span><span class="p">)</span>
+    <span class="n">SubscribableChannel</span> <span class="n">input2</span><span class="p">();</span>
+
+    <span class="nd">@Input</span><span class="p">(</span><span class="n">SendAndReceive</span><span class="o">.</span><span class="n">INPUT3</span><span class="p">)</span>
+    <span class="n">SubscribableChannel</span> <span class="n">input3</span><span class="p">();</span>
+
+    <span class="nd">@Output</span><span class="p">(</span><span class="n">SendAndReceive</span><span class="o">.</span><span class="n">SEND1</span><span class="p">)</span>
+    <span class="n">MessageChannel</span> <span class="n">send1</span><span class="p">();</span>
+
+    <span class="nd">@Output</span><span class="p">(</span><span class="n">SendAndReceive</span><span class="o">.</span><span class="n">SEND2</span><span class="p">)</span>
+    <span class="n">MessageChannel</span> <span class="n">send2</span><span class="p">();</span>
+
+    <span class="nd">@Output</span><span class="p">(</span><span class="n">SendAndReceive</span><span class="o">.</span><span class="n">SEND3</span><span class="p">)</span>
+    <span class="n">MessageChannel</span> <span class="n">send3</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>3.创建消息接收发送类:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@EnableBinding</span><span class="p">(</span><span class="n">SendAndReceive</span><span class="o">.</span><span class="n">class</span><span class="p">)</span>
+<span class="nd">@WebAppConfiguration</span>
+<span class="n">public</span> <span class="k">class</span> <span class="nc">ReciverAndSend</span><span class="p">{</span>
+
+    <span class="nd">@Autowired</span>
+    <span class="n">private</span> <span class="n">SendAndReceive</span> <span class="n">sendAndReceive</span><span class="p">;</span>
+
+    <span class="nd">@StreamListener</span><span class="p">(</span><span class="n">Sink</span><span class="o">.</span><span class="n">INPUT1</span><span class="p">)</span>
+    <span class="n">public</span> <span class="n">void</span> <span class="n">revice1</span><span class="p">(</span><span class="n">Object</span> <span class="n">payload</span><span class="p">){</span>
+        <span class="o">...</span>
+    <span class="p">}</span>
+
+    <span class="nd">@StreamListener</span><span class="p">(</span><span class="n">Sink</span><span class="o">.</span><span class="n">INPUT2</span><span class="p">)</span>
+    <span class="n">public</span> <span class="n">void</span> <span class="n">revice2</span><span class="p">(</span><span class="n">Object</span> <span class="n">payload</span><span class="p">){</span>
+        <span class="o">...</span>
+    <span class="p">}</span>
+
+    <span class="nd">@StreamListener</span><span class="p">(</span><span class="n">Sink</span><span class="o">.</span><span class="n">INPUT3</span><span class="p">)</span>
+    <span class="n">public</span> <span class="n">void</span> <span class="n">revice3</span><span class="p">(</span><span class="n">Object</span> <span class="n">payload</span><span class="p">){</span>
+        <span class="o">...</span>
+    <span class="p">}</span>
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">send1</span><span class="p">(){</span>
+        <span class="n">sendAndReceive</span><span class="o">.</span><span class="n">send1</span><span class="p">()</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">MessageBuilder</span><span class="o">.</span><span class="n">withPayload</span><span class="p">(</span><span class="s2">&quot;内容&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">build</span><span class="p">())</span>
+    <span class="p">}</span>
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">send2</span><span class="p">(){</span>
+        <span class="n">sendAndReceive</span><span class="o">.</span><span class="n">send2</span><span class="p">()</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">MessageBuilder</span><span class="o">.</span><span class="n">withPayload</span><span class="p">(</span><span class="s2">&quot;内容&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">build</span><span class="p">())</span>
+    <span class="p">}</span>
+
+     <span class="n">public</span> <span class="n">void</span> <span class="n">send3</span><span class="p">(){</span>
+        <span class="n">sendAndReceive</span><span class="o">.</span><span class="n">send2</span><span class="p">()</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">MessageBuilder</span><span class="o">.</span><span class="n">withPayload</span><span class="p">(</span><span class="s2">&quot;内容&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">build</span><span class="p">())</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>4.创建服务启动类:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@SpringBootApplication</span>
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Application</span> <span class="p">{</span>
+
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">SpringApplication</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">Application</span><span class="o">.</span><span class="n">class</span><span class="p">,</span> <span class="n">args</span><span class="p">);</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>5.配置文件中添加如下配置:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>spring.cloud.stream.defaultBinder: 配置默认绑定器，比如kafka
+spring.cloud.stream.bindings.input1.group: 为具体通道绑定分组名，通常设置成服务名
+spring.cloud.stream.bindings.input1.destination: 设置具体通道消费主题
+spring.cloud.stream.bindings.output1.destination: 设置具体通道输出消息的主题
+spring.cloud.stream.bindings.input1.content-type: 设置输入通道MIME类型
+spring.cloud.stream.kafka.binder.brokers: 配置kafka地址
+...
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h1>3. 核心概念<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h1>
+<p>Spring Cloud Stream构建的应用程序与消息中间件之间通过绑定器Binder相关联，绑定器相对于应用程序而言起到了隔离作用，它使得不同消息中间件的实现细节对应用程序是透明的，我们只需要使用Binder提供的抽象概念来使用消息中间件，这个抽象概念就是Channel。</p>
+<div class="section" id="id4">
+<h2>3.1. 绑定器<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>绑定器通过channel通道完美的实现了应用程序与消息中间件细节之间的隔离解耦，对于更换消息中间件只需要更换对应的Binder绑定器而不用需改任何代码逻辑。</p>
+</div>
+<div class="section" id="id5">
+<h2>3.2. 发布订阅模式<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>Spring Cloud Stream中的消息通信方式遵循发布-订阅模式，当一条消息投递到消息中间件后，会通过共享的Topic主题进行广播，消息订阅者接收消息并触发自身逻辑。</p>
+</div>
+<div class="section" id="id6">
+<h2>3.3. 消息分组<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>spring.cloud.stream.bindings.input.group可以为应用实例指定分组，如果不显示为应用指定分组，Spring Cloud Stream将为其分配一个独立的匿名消费组。对于同一个Topic下同一分组的应用实例只有一个会消费。</p>
+</div>
+<div class="section" id="id7">
+<h2>3.4. 消息分区<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>通过消息分区可以实现当生产者将消息数据发送给多个消费者实例时，保证拥有相同特征的消息数据始终是由同一个消费者实例接收处理，</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="stream.html" class="btn btn-neutral" title="Spring Cloud Stream" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright .
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.0.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/language_data.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

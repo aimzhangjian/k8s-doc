@@ -1,0 +1,289 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1. 服务治理 &mdash; 微服务架构概述 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="微服务架构概述 1.0.0 documentation" href="../../index.html"/>
+        <link rel="up" title="Spring Cloud Eureka" href="eureka.html"/>
+        <link rel="next" title="3. 搭建服务注册中心" href="eureka_02.html"/>
+        <link rel="prev" title="Spring Cloud Eureka" href="eureka.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> 微服务架构概述
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../00.summary/summary.html">微服务</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../spring-cloud.html">Spring Cloud</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../01.introduction/introduction.html">Spring Cloud</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="eureka.html">Spring Cloud Eureka</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">1. 服务治理</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">1.1. 服务注册</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">1.2. 服务发现</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#eureka">2. Eureka</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id4">2.1. Eureka服务端</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">2.2. Eureka客户端</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="eureka_02.html">3. 搭建服务注册中心</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eureka_02.html#id2">4. 服务提供者</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eureka_03.html">5. 服务治理机制</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eureka_03.html#id2">6. 服务提供者</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eureka_03.html#id6">7. 服务消费者</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eureka_03.html#id10">8. 服务注册中心</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../03.feign/feign.html">Spring Cloud feign</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04.zuul/zuul.html">Spring Cloud Zuul</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05.config/config.html">Spring Cloud Config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06.bus/bus.html">Spring Cloud Bus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07.stream/stream.html">Spring Cloud Stream</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">微服务架构概述</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../spring-cloud.html">Spring Cloud</a> &raquo;</li>
+        
+          <li><a href="eureka.html">Spring Cloud Eureka</a> &raquo;</li>
+        
+      <li>1. 服务治理</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/01.spring-cloud/02.eureka/eureka_01.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>1. 服务治理<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>服务治理组件是微服务架构最核心和基础的模块，主要实现各个微服务实例的自动注册与发现。</p>
+<div class="section" id="id2">
+<h2>1.1. 服务注册<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>每个微服务向注册中心登记自己提供的服务，将主机、端口、版本号、通信协议等一些附加信息告知注册中心，注册中心按服务名分类组织服务清单。注册中心维护一个心跳去监测清单中服务是否可用，若不可用从服务清单中剔除。</p>
+</div>
+<div class="section" id="id3">
+<h2>1.2. 服务发现<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>在服务治理框架下运行，服务间的调用不用指定具体服务实例的地址，而是通过服务名发起请求调用实现。调用方需要向注册中心咨询服务，获取所有服务列表，实现对具体服务的调用。对于同一个服务名多个服务实例，调用方将以某种策略获取出一个位置进行访问。</p>
+</div>
+</div>
+<div class="section" id="eureka">
+<h1>2. Eureka<a class="headerlink" href="#eureka" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id4">
+<h2>2.1. Eureka服务端<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>Eureka服务端即服务注册中心。提供注册中心相关功能，可以集群方式部署</p>
+</div>
+<div class="section" id="id5">
+<h2>2.2. Eureka客户端<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>处理服务的注册与发现。客户端服务通过注解和参数配置的方式，嵌入在客户端应用程序代码中，应用程序运行时，Eureka客户端向注册中心注册自身提供的服务并周期性地发送心跳来更新服务租约。同时，也能从服务端查询当前注册的服务信息列表并缓存到本地并周期性地刷新服务状态。</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="eureka_02.html" class="btn btn-neutral float-right" title="3. 搭建服务注册中心" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="eureka.html" class="btn btn-neutral" title="Spring Cloud Eureka" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright .
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.0.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/language_data.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

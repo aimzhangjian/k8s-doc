@@ -1,0 +1,391 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3. 搭建服务注册中心 &mdash; 微服务架构概述 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="微服务架构概述 1.0.0 documentation" href="../../index.html"/>
+        <link rel="up" title="Spring Cloud Eureka" href="eureka.html"/>
+        <link rel="next" title="5. 服务治理机制" href="eureka_03.html"/>
+        <link rel="prev" title="1. 服务治理" href="eureka_01.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> 微服务架构概述
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../00.summary/summary.html">微服务</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../spring-cloud.html">Spring Cloud</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../01.introduction/introduction.html">Spring Cloud</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="eureka.html">Spring Cloud Eureka</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="eureka_01.html">1. 服务治理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eureka_01.html#eureka">2. Eureka</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">3. 搭建服务注册中心</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">4. 服务提供者</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eureka_03.html">5. 服务治理机制</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eureka_03.html#id2">6. 服务提供者</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eureka_03.html#id6">7. 服务消费者</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eureka_03.html#id10">8. 服务注册中心</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../03.feign/feign.html">Spring Cloud feign</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04.zuul/zuul.html">Spring Cloud Zuul</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05.config/config.html">Spring Cloud Config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06.bus/bus.html">Spring Cloud Bus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07.stream/stream.html">Spring Cloud Stream</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">微服务架构概述</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../spring-cloud.html">Spring Cloud</a> &raquo;</li>
+        
+          <li><a href="eureka.html">Spring Cloud Eureka</a> &raquo;</li>
+        
+      <li>3. 搭建服务注册中心</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/01.spring-cloud/02.eureka/eureka_02.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>3. 搭建服务注册中心<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>1.创建基础Spring Boot工程，命名为eureka-server，并在pom.xml中引入必要的依赖:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;parent&gt;
+  &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+  &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;
+  &lt;version&gt;1.5.14.RELEASE&lt;/version&gt;
+  &lt;relativePath/&gt; &lt;!-- lookup parent from repository --&gt;
+&lt;/parent&gt;
+&lt;dependencies&gt;
+  &lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-starter-undertow&lt;/artifactId&gt;
+  &lt;/dependency&gt;
+  &lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+    &lt;exclusions&gt;
+      &lt;exclusion&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-starter-tomcat&lt;/artifactId&gt;
+      &lt;/exclusion&gt;
+     &lt;/exclusions&gt;
+   &lt;/dependency&gt;
+   &lt;dependency&gt;
+     &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+     &lt;artifactId&gt;spring-cloud-starter-eureka-server&lt;/artifactId&gt;
+   &lt;/dependency&gt;
+&lt;/dependencies&gt;
+</pre></div>
+</div>
+<p>2.&#64;EnableEurekaServer注解启动一个服务注册中心:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@EnableEurekaServer</span>
+<span class="nd">@SpringBootApplication</span>
+<span class="n">public</span> <span class="k">class</span> <span class="nc">EurekaServerApplication</span> <span class="p">{</span>
+
+        <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+
+                <span class="n">SpringApplication</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">EurekaServerApplication</span><span class="o">.</span><span class="n">class</span><span class="p">,</span> <span class="n">args</span><span class="p">);</span>
+
+        <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>3.添加bootstrap.yum文件:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">server</span><span class="p">:</span>
+  <span class="n">port</span><span class="p">:</span> <span class="mi">8000</span>
+<span class="n">spring</span><span class="p">:</span>
+  <span class="n">application</span><span class="p">:</span>
+    <span class="n">name</span><span class="p">:</span> <span class="n">eureka</span><span class="o">-</span><span class="n">server</span>
+</pre></div>
+</div>
+<p>4.添加application.yml配置文件:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>eureka:
+  instance:
+    preferIpAddress: true
+    leaseRenewalIntervalInSeconds: 10
+    leaseExpirationDurationInSeconds: 30
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    serviceUrl:
+      defaultZone: ${EUREKA_DEFAULT_ZONE:http://localhost:8000/eureka/}
+    registryFetchIntervalSeconds: 10
+    disable-delta: true
+  server:
+    evictionIntervalTimerInMs: 4000
+</pre></div>
+</div>
+<p>eureka.client.register-with-eureka: 设置是否向注册中心注册服务，因为本身为注册中心不需要注册自己。如果是注册中心集群则不需要此配置，默认为true。</p>
+<p>eureka.client.fetch-registry: 设置是否去注册中心检索服务，因为本身为注册中心维护有服务列表不用去检索。如果为注册中心集群则不需此配置，默认为true。</p>
+<p>eureka.client.serviceUrl.defaultZone: 注册中心地址</p>
+<p>eureka.client.registryFetchIntervalSeconds: 间隔多久去拉取服务注册信息，默认30秒</p>
+</div>
+<div class="section" id="id2">
+<h1>4. 服务提供者<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h1>
+<p>1.创建一个Spring Boot项目，命名为oauth-server，pom.xml如下:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">dependency</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">groupId</span><span class="o">&gt;</span><span class="n">org</span><span class="o">.</span><span class="n">springframework</span><span class="o">.</span><span class="n">boot</span><span class="o">&lt;/</span><span class="n">groupId</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">artifactId</span><span class="o">&gt;</span><span class="n">spring</span><span class="o">-</span><span class="n">boot</span><span class="o">-</span><span class="n">starter</span><span class="o">-</span><span class="n">undertow</span><span class="o">&lt;/</span><span class="n">artifactId</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">dependency</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">dependency</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">groupId</span><span class="o">&gt;</span><span class="n">org</span><span class="o">.</span><span class="n">springframework</span><span class="o">.</span><span class="n">boot</span><span class="o">&lt;/</span><span class="n">groupId</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">artifactId</span><span class="o">&gt;</span><span class="n">spring</span><span class="o">-</span><span class="n">boot</span><span class="o">-</span><span class="n">starter</span><span class="o">-</span><span class="n">web</span><span class="o">&lt;/</span><span class="n">artifactId</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">exclusions</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">exclusion</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">groupId</span><span class="o">&gt;</span><span class="n">org</span><span class="o">.</span><span class="n">springframework</span><span class="o">.</span><span class="n">boot</span><span class="o">&lt;/</span><span class="n">groupId</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">artifactId</span><span class="o">&gt;</span><span class="n">spring</span><span class="o">-</span><span class="n">boot</span><span class="o">-</span><span class="n">starter</span><span class="o">-</span><span class="n">tomcat</span><span class="o">&lt;/</span><span class="n">artifactId</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="n">exclusion</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">exclusions</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">dependency</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">dependency</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">groupId</span><span class="o">&gt;</span><span class="n">org</span><span class="o">.</span><span class="n">springframework</span><span class="o">.</span><span class="n">boot</span><span class="o">&lt;/</span><span class="n">groupId</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">artifactId</span><span class="o">&gt;</span><span class="n">spring</span><span class="o">-</span><span class="n">boot</span><span class="o">-</span><span class="n">starter</span><span class="o">-</span><span class="n">test</span><span class="o">&lt;/</span><span class="n">artifactId</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">scope</span><span class="o">&gt;</span><span class="n">test</span><span class="o">&lt;/</span><span class="n">scope</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">dependency</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">dependency</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">groupId</span><span class="o">&gt;</span><span class="n">org</span><span class="o">.</span><span class="n">springframework</span><span class="o">.</span><span class="n">cloud</span><span class="o">&lt;/</span><span class="n">groupId</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">artifactId</span><span class="o">&gt;</span><span class="n">spring</span><span class="o">-</span><span class="n">cloud</span><span class="o">-</span><span class="n">starter</span><span class="o">-</span><span class="n">netflix</span><span class="o">-</span><span class="n">eureka</span><span class="o">-</span><span class="n">client</span><span class="o">&lt;/</span><span class="n">artifactId</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">dependency</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>2.添加&#64;EnableDiscoveryClent注解，开启服务发现功能:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@EnableEurekaClient</span>
+<span class="nd">@SpringBootApplication</span>
+<span class="n">public</span> <span class="k">class</span> <span class="nc">OauthServerApplication</span> <span class="p">{</span>
+
+        <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+
+                <span class="n">SpringApplication</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">OauthServerApplication</span><span class="o">.</span><span class="n">class</span><span class="p">,</span> <span class="n">args</span><span class="p">);</span>
+
+        <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>3.添加bootstrap.yml配置文件:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">server</span><span class="p">:</span>
+  <span class="n">port</span><span class="p">:</span> <span class="mi">8020</span>
+<span class="n">spring</span><span class="p">:</span>
+  <span class="n">application</span><span class="p">:</span>
+    <span class="n">name</span><span class="p">:</span> <span class="n">oauth</span><span class="o">-</span><span class="n">server</span>
+</pre></div>
+</div>
+<p>4.添加applocation.yml文件:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_DEFAULT_ZONE:http://localhost:8000/eureka/}
+    registryFetchIntervalSeconds: 10
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="eureka_03.html" class="btn btn-neutral float-right" title="5. 服务治理机制" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="eureka_01.html" class="btn btn-neutral" title="1. 服务治理" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright .
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.0.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/language_data.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
