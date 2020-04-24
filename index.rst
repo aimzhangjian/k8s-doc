@@ -10,4 +10,5 @@
    :maxdepth: 3
 
    10.security/security
+   20.command/command
 
